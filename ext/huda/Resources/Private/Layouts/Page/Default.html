@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Huda-IT</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <f:for each="{mainnavigation}" as="mainnavigationItem">
+                <f:if condition="{mainnavigationItem.children}">
+                    <f:then>
+                        <li class="nav-item {f:if(condition: mainnavigationItem.active, then:'active')} dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                {mainnavigationItem.title}
+                            </a>
+                            <div class="dropdown-menu">
+                                <f:for each="{mainnavigationItem.children}" as="child">
+                                    <a class="dropdown-item" href="{child.link}">{child.title}</a>
+                                </f:for>
+                            </div>
+                        </li>
+
+                    </f:then>
+                    <f:else>
+                        <li class="nav-item {f:if(condition: mainnavigationItem.active, then:'active')}">
+                            <a class="nav-link" href="{mainnavigationItem.link}"> {mainnavigationItem.title} <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                    </f:else>
+                </f:if>
+
+
+            </f:for>
+
+        </ul>
+    </div>
+</nav>
+
+<!-- <div class="container">
+    <ul>
+        <f:for each="{mainnavigation}" as="mainnavigationItem">
+            <li class="{f:if(condition: mainnavigationItem.active, then:'active')}">
+                <a href="{mainnavigationItem.link}" target="{mainnavigationItem.target}"
+                    title="{mainnavigationItem.title}">
+                    {mainnavigationItem.title}
+                </a>
+                <f:if condition="{mainnavigationItem.children}">
+                    <ul>
+                        <f:for each="{mainnavigationItem.children}" as="child">
+                            <li class="{f:if(condition: child.active, then:'active')}">
+                                <a href="{child.link}" target="{child.target}" title="{child.title}">
+                                    {child.title}
+                                </a>
+                            </li>
+                        </f:for>
+                    </ul>
+                </f:if>
+            </li>
+        </f:for>
+    </ul>
+</div> -->
+<f:render section="Main" />

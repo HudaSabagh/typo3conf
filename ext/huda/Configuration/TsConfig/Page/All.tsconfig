@@ -1,0 +1,7 @@
+#
+# PageTS for huda
+#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:huda/Configuration/TsConfig/Page/RTE.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:huda/Configuration/TsConfig/Page/TCEFORM.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:huda/Configuration/TsConfig/Page/TCEMAIN.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:huda/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig">
